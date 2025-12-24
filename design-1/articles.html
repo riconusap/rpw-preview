@@ -66,16 +66,16 @@
     <nav id="navbar" class="fixed w-full z-50 bg-navy text-white border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex flex-col leading-tight">
-                    <a href="index.html" class="text-xl font-bold tracking-tighter text-gold">KPW</a>
-                    <span class="text-[10px] md:text-xs font-light tracking-widest uppercase opacity-70">R. Prama Wijaya & Partners</span>
+                <div class="flex flex-col leading-tight items-start mr-auto">
+                    <a href="index.html"><img src="logo.png" alt="RPW Logo" class="h-10 w-auto mb-1" id="nav-brand" style="height:40px;max-width:160px;object-fit:contain;margin-bottom:2px;margin-left:0;" /></a>
+                    <span id="nav-tagline" class="text-[10px] md:text-xs font-light tracking-widest uppercase opacity-70">R. Prama Wijaya & Partners</span>
                 </div>
                 <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider nav-links">
                     <a href="index.html" class="hover:text-gold transition-colors py-2">Home</a>
                     <a href="index.html#about" class="hover:text-gold transition-colors py-2">About</a>
                     <a href="index.html#expertise" class="hover:text-gold transition-colors py-2">Expertise</a>
-                    <a href="insights.html" class="text-gold border-b-2 border-gold py-2">Insights</a>
-                    <a href="index.html#contact" class="bg-gold text-navy px-5 py-2 rounded-sm hover:bg-white transition-all font-bold">Contact Us</a>
+                    <a href="articles.html" class="text-gold border-b-2 border-gold py-2">Insights</a>
+                    <a href="index.html#contact" id="nav-cta" class="bg-gold text-navy px-5 py-2 rounded-sm hover:bg-white transition-all font-bold">Contact Us</a>
                 </div>
                 <button id="nav-toggle" class="md:hidden text-gold p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
@@ -119,111 +119,14 @@
     <!-- Main Content: Article Grid -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Article 1 (Featured Style) -->
-                <article class="article-card bg-white rounded-sm overflow-hidden shadow-sm border border-slate-200 flex flex-col">
-                    <div class="h-56 bg-navy/5 relative overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Article Image">
-                        <span class="absolute top-4 left-4 bg-gold text-navy text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Corporate</span>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <time class="text-xs text-slate-400 mb-2 font-medium">Desember 12, 2024</time>
-                        <h3 class="text-xl font-bold text-navy mb-4 leading-tight italic hover:text-gold transition-colors cursor-pointer">
-                            Navigasi Perubahan Regulasi Investasi Asing di Indonesia 2025
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                            Ulasan mendalam mengenai perubahan kebijakan Omnibus Law yang berdampak pada struktur permodalan perusahaan asing di sektor energi terbarukan.
-                        </p>
-                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">By Admin</span>
-                            <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
-                                Read Full <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Article 2 -->
-                <article class="article-card bg-white rounded-sm overflow-hidden shadow-sm border border-slate-200 flex flex-col">
-                    <div class="h-56 bg-navy/5 relative overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2959210?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Article Image">
-                        <span class="absolute top-4 left-4 bg-gold text-navy text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Litigation</span>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <time class="text-xs text-slate-400 mb-2 font-medium">November 28, 2024</time>
-                        <h3 class="text-xl font-bold text-navy mb-4 leading-tight italic hover:text-gold transition-colors cursor-pointer">
-                            Pentingnya Arbitrase dalam Penyelesaian Sengketa Bisnis Internasional
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                            Mengapa arbitrase menjadi pilihan utama bagi perusahaan multinasional dibandingkan melalui jalur pengadilan umum di Indonesia.
-                        </p>
-                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">By Counsel</span>
-                            <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
-                                Read Full <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="article-card bg-white rounded-sm overflow-hidden shadow-sm border border-slate-200 flex flex-col">
-                    <div class="h-56 bg-navy/5 relative overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Article Image">
-                        <span class="absolute top-4 left-4 bg-gold text-navy text-[10px] font-bold px-3 py-1 uppercase tracking-widest">IP Rights</span>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <time class="text-xs text-slate-400 mb-2 font-medium">Oktober 15, 2024</time>
-                        <h3 class="text-xl font-bold text-navy mb-4 leading-tight italic hover:text-gold transition-colors cursor-pointer">
-                            Perlindungan Hak Kekayaan Intelektual di Era Transformasi Digital
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                            Strategi hukum bagi pemilik merek untuk mencegah pelanggaran di marketplace dan platform media sosial yang kian masif.
-                        </p>
-                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">By Admin</span>
-                            <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
-                                Read Full <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 4 -->
-                <article class="article-card bg-white rounded-sm overflow-hidden shadow-sm border border-slate-200 flex flex-col">
-                    <div class="h-56 bg-navy/5 relative overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1453941403708-341ff5b41264?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Article Image">
-                        <span class="absolute top-4 left-4 bg-gold text-navy text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Tax Law</span>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <time class="text-xs text-slate-400 mb-2 font-medium">September 05, 2024</time>
-                        <h3 class="text-xl font-bold text-navy mb-4 leading-tight italic hover:text-gold transition-colors cursor-pointer">
-                            Memahami Pajak Karbon: Implikasi bagi Sektor Manufaktur
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                            Bagaimana regulasi baru mengenai pajak karbon akan memengaruhi biaya operasional dan strategi keberlanjutan perusahaan di Indonesia.
-                        </p>
-                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">By Counsel</span>
-                            <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
-                                Read Full <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
+            <div id="articles-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Artikel akan di-render oleh JS -->
             </div>
 
-            <!-- Pagination (Mock) -->
-            <div class="mt-20 flex justify-center items-center gap-4">
-                <button class="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-400 hover:border-gold hover:text-gold transition-all">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                </button>
-                <button class="w-10 h-10 bg-navy text-gold rounded-sm flex items-center justify-center font-bold text-sm">1</button>
-                <button class="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-600 hover:border-gold hover:text-gold transition-all font-bold text-sm">2</button>
-                <button class="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-600 hover:border-gold hover:text-gold transition-all font-bold text-sm">3</button>
-                <button class="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-600 hover:border-gold hover:text-gold transition-all">
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                </button>
+            <!-- Pagination (Simulasi) -->
+            <div class="mt-20 flex justify-center items-center gap-4" id="pagination">
+                <!-- Akan di-render oleh JS -->
             </div>
         </div>
     </section>
@@ -277,6 +180,165 @@
                 navbar.classList.remove('shadow-lg', 'bg-opacity-95');
             }
         });
+
+        // --- Artikel dan Pagination ---
+        const articles = [
+            {
+                img: 'https://images.unsplash.com/photo-1556740772-1a741367b93e?auto=format&fit=crop&w=800&q=80',
+                category: 'Corporate',
+                date: 'Desember 12, 2024',
+                title: 'Navigasi Perubahan Regulasi Investasi Asing di Indonesia 2025',
+                excerpt: 'Ulasan mendalam mengenai perubahan kebijakan Omnibus Law yang berdampak pada struktur permodalan perusahaan asing di sektor energi terbarukan.',
+                author: 'Admin',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=800&q=80',
+                category: 'Litigation',
+                date: 'November 28, 2024',
+                title: 'Pentingnya Arbitrase dalam Penyelesaian Sengketa Bisnis Internasional',
+                excerpt: 'Mengapa arbitrase menjadi pilihan utama bagi perusahaan multinasional dibandingkan melalui jalur pengadilan umum di Indonesia.',
+                author: 'Counsel',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b302b?auto=format&fit=crop&w=800&q=80',
+                category: 'IP Rights',
+                date: 'Oktober 15, 2024',
+                title: 'Perlindungan Hak Kekayaan Intelektual di Era Transformasi Digital',
+                excerpt: 'Strategi hukum bagi pemilik merek untuk mencegah pelanggaran di marketplace dan platform media sosial yang kian masif.',
+                author: 'Admin',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80',
+                category: 'Tax Law',
+                date: 'September 05, 2024',
+                title: 'Memahami Pajak Karbon: Implikasi bagi Sektor Manufaktur',
+                excerpt: 'Bagaimana regulasi baru mengenai pajak karbon akan memengaruhi biaya operasional dan strategi keberlanjutan perusahaan di Indonesia.',
+                author: 'Counsel',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80',
+                category: 'Corporate',
+                date: 'Agustus 21, 2024',
+                title: 'Strategi Akuisisi dan Merger di Era Digital',
+                excerpt: 'Tips dan tantangan hukum dalam proses merger dan akuisisi perusahaan teknologi di Indonesia.',
+                author: 'Admin',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80',
+                category: 'Litigation',
+                date: 'Juli 10, 2024',
+                title: 'Peran Mediasi dalam Penyelesaian Sengketa Keluarga',
+                excerpt: 'Bagaimana mediasi dapat menjadi solusi efektif dalam penyelesaian sengketa keluarga di pengadilan.',
+                author: 'Counsel',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1468852506551-a2d93c13d4c6?auto=format&fit=crop&w=800&q=80',
+                category: 'IP Rights',
+                date: 'Juni 18, 2024',
+                title: 'Lisensi Software: Risiko dan Perlindungan Hukum',
+                excerpt: 'Analisis risiko hukum dan perlindungan bagi pengembang dan pengguna software di Indonesia.',
+                author: 'Admin',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+                category: 'Tax Law',
+                date: 'Mei 30, 2024',
+                title: 'Pajak Digital: Tantangan dan Peluang',
+                excerpt: 'Dampak regulasi pajak digital terhadap pelaku usaha e-commerce dan startup.',
+                author: 'Counsel',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80',
+                category: 'Corporate',
+                date: 'April 12, 2024',
+                title: 'Legal Due Diligence untuk Startup',
+                excerpt: 'Langkah-langkah penting dalam melakukan legal due diligence sebelum investasi pada startup.',
+                author: 'Admin',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1461344577544-4e5dc9487184?auto=format&fit=crop&w=800&q=80',
+                category: 'Litigation',
+                date: 'Maret 22, 2024',
+                title: 'Penyelesaian Sengketa Konsumen di Era Digital',
+                excerpt: 'Prosedur dan perlindungan hukum bagi konsumen dalam transaksi online.',
+                author: 'Counsel',
+            },
+            {
+                img: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80',
+                category: 'Tax Law',
+                date: 'Februari 14, 2024',
+                title: 'Insentif Pajak untuk UMKM',
+                excerpt: 'Panduan insentif pajak terbaru yang dapat dimanfaatkan oleh pelaku UMKM.',
+                author: 'Admin',
+            },
+        ];
+
+        const articlesPerPage = 6;
+        let currentPage = 1;
+        const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+        function renderArticles(page) {
+            const grid = document.getElementById('articles-grid');
+            grid.innerHTML = '';
+            const start = (page - 1) * articlesPerPage;
+            const end = start + articlesPerPage;
+            const pageArticles = articles.slice(start, end);
+            pageArticles.forEach(article => {
+                grid.innerHTML += `
+                <article class="article-card bg-white rounded-sm overflow-hidden shadow-sm border border-slate-200 flex flex-col">
+                    <div class="h-56 bg-navy/5 relative overflow-hidden group">
+                        <img src="${article.img}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="${article.category} Article" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-gold text-navy text-[10px] font-bold px-3 py-1 uppercase tracking-widest">${article.category}</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <time class="text-xs text-slate-400 mb-2 font-medium">${article.date}</time>
+                        <h3 class="text-xl font-bold text-navy mb-4 leading-tight italic hover:text-gold transition-colors cursor-pointer">
+                            ${article.title}
+                        </h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                            ${article.excerpt}
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">By ${article.author}</span>
+                            <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
+                                Read Full <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                `;
+            });
+            // Dummy card jika page 2 kurang dari 6 artikel
+            if(pageArticles.length < articlesPerPage) {
+                for(let i=0; i<articlesPerPage-pageArticles.length; i++) {
+                    grid.innerHTML += `<div></div>`;
+                }
+            }
+            lucide.createIcons();
+        }
+
+        function renderPagination() {
+            const pag = document.getElementById('pagination');
+            pag.innerHTML = '';
+            pag.innerHTML += `<button class="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-400 hover:border-gold hover:text-gold transition-all" ${currentPage===1?'disabled':''} onclick="changePage(${currentPage-1})"><i data-lucide='chevron-left' class='w-4 h-4'></i></button>`;
+            for(let i=1; i<=totalPages; i++) {
+                pag.innerHTML += `<button class="w-10 h-10 ${currentPage===i?'bg-navy text-gold':'border border-slate-200 text-slate-600 hover:border-gold hover:text-gold'} rounded-sm flex items-center justify-center font-bold text-sm" onclick="changePage(${i})">${i}</button>`;
+            }
+            pag.innerHTML += `<button class="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-600 hover:border-gold hover:text-gold transition-all" ${currentPage===totalPages?'disabled':''} onclick="changePage(${currentPage+1})"><i data-lucide='chevron-right' class='w-4 h-4'></i></button>`;
+            lucide.createIcons();
+        }
+
+        window.changePage = function(page) {
+            if(page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderArticles(currentPage);
+            renderPagination();
+            window.scrollTo({top: document.getElementById('articles-grid').offsetTop-120, behavior:'smooth'});
+        }
+
+        // Initial render
+        renderArticles(currentPage);
+        renderPagination();
     </script>
 </body>
 </html>
