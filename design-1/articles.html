@@ -36,6 +36,16 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+    <!-- Simulasi Loading Overlay -->
+    <div id="page-loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 backdrop-blur-sm transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4">
+            <svg class="animate-spin h-10 w-10 text-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
+            <span class="text-navy font-bold text-lg">Memuat halaman...</span>
+        </div>
+    </div>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" 
@@ -63,7 +73,7 @@
     <div id="menu-overlay" class="fixed inset-0 bg-navy/60 backdrop-blur-sm z-[65] hidden md:hidden"></div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 bg-navy text-white border-b border-white/10">
+    <nav id="navbar" class="fixed w-full z-50 bg-transparent text-white border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex flex-col leading-tight items-start mr-auto">
@@ -71,10 +81,11 @@
                     <span id="nav-tagline" class="text-[10px] md:text-xs font-light tracking-widest uppercase opacity-70">R. Prama Wijaya & Partners</span>
                 </div>
                 <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider nav-links">
-                    <a href="index.html" class="hover:text-gold transition-colors py-2">Home</a>
                     <a href="index.html#about" class="hover:text-gold transition-colors py-2">About</a>
                     <a href="index.html#expertise" class="hover:text-gold transition-colors py-2">Expertise</a>
+                    <a href="index.html#team" class="hover:text-gold transition-colors py-2">Team</a>
                     <a href="articles.html" class="text-gold border-b-2 border-gold py-2">Insights</a>
+                    <a href="index.html#clients" class="hover:text-gold transition-colors py-2">Clients</a>
                     <a href="index.html#contact" id="nav-cta" class="bg-gold text-navy px-5 py-2 rounded-sm hover:bg-white transition-all font-bold">Contact Us</a>
                 </div>
                 <button id="nav-toggle" class="md:hidden text-gold p-2">
@@ -145,15 +156,28 @@
     </footer>
 
     <script>
+            // Simulasi loading halaman
+            window.addEventListener('DOMContentLoaded', function() {
+                setTimeout(function() {
+                    const loader = document.getElementById('page-loader');
+                    if(loader) {
+                        loader.style.opacity = '0';
+                        setTimeout(() => loader.style.display = 'none', 500);
+                    }
+                }, 1200);
+            });
         lucide.createIcons();
 
-        // Navbar Scroll Handler
+
+        // Navbar Scroll Handler (sama seperti index.html)
         const navbar = document.getElementById('navbar');
         const navToggle = document.getElementById('nav-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenu = document.getElementById('close-menu');
         const menuOverlay = document.getElementById('menu-overlay');
         const mobileLinks = document.querySelectorAll('.mobile-link');
+        const tagline = document.getElementById('nav-tagline');
+        const cta = document.getElementById('nav-cta');
 
         const toggleMenu = (show) => {
             if(show) {
@@ -172,12 +196,24 @@
         menuOverlay.addEventListener('click', () => toggleMenu(false));
         mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
 
-        // Tetap Navy karena ini halaman sub, tapi kasih shadow pas scroll
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-lg', 'bg-opacity-95');
+            if (!tagline || !cta) return;
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'text-navy', 'shadow-md', 'border-slate-200');
+                navbar.classList.remove('bg-transparent', 'text-white', 'border-white/10');
+                tagline.classList.remove('opacity-70');
+                tagline.classList.add('text-slate-500');
+                cta.classList.add('bg-navy', 'text-white');
+                cta.classList.remove('bg-gold', 'text-navy');
+                navToggle.classList.add('text-navy');
             } else {
-                navbar.classList.remove('shadow-lg', 'bg-opacity-95');
+                navbar.classList.remove('bg-white', 'text-navy', 'shadow-md', 'border-slate-200');
+                navbar.classList.add('bg-transparent', 'text-white', 'border-white/10');
+                tagline.classList.add('opacity-70');
+                tagline.classList.remove('text-slate-500');
+                cta.classList.remove('bg-navy', 'text-white');
+                cta.classList.add('bg-gold', 'text-navy');
+                navToggle.classList.remove('text-navy');
             }
         });
 
@@ -300,7 +336,7 @@
                         </p>
                         <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">By ${article.author}</span>
-                            <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
+                            <a href="article-detail.html" class="text-[10px] font-bold uppercase tracking-widest text-navy hover:text-gold transition-colors flex items-center gap-1">
                                 Read Full <i data-lucide="chevron-right" class="w-3 h-3"></i>
                             </a>
                         </div>

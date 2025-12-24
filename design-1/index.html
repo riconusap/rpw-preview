@@ -55,6 +55,16 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+    <!-- Simulasi Loading Overlay -->
+    <div id="page-loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 backdrop-blur-sm transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4">
+            <svg class="animate-spin h-10 w-10 text-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
+            <span class="text-navy font-bold text-lg">Memuat halaman...</span>
+        </div>
+    </div>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" 
@@ -94,7 +104,7 @@
                 <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider nav-links">
                     <a href="#about" class="hover:text-gold transition-colors py-2">About</a>
                     <a href="#expertise" class="hover:text-gold transition-colors py-2">Expertise</a>
-                    <a href="#team" class="hover:text-gold transition-colors py-2">Team</a>
+                    <a href="#team" class="hover:text-gold transition-colors py-2">Our Attorney</a>
                     <a href="#insights" class="hover:text-gold transition-colors py-2">Insights</a>
                     <a href="#clients" class="hover:text-gold transition-colors py-2">Clients</a>
                     <a href="#contact" id="nav-cta" class="bg-gold text-navy px-5 py-2 rounded-sm hover:bg-white transition-all font-bold">Contact Us</a>
@@ -179,29 +189,66 @@
 
     <!-- Team Section -->
     <section id="team" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl text-navy text-center mb-16">The Counsel</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <!-- Founder -->
-                <div class="md:col-span-3 lg:col-span-1 bg-navy text-white p-8 rounded-sm relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
-                        <i data-lucide="award" class="w-32 h-32"></i>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div>
+                    <h3 class="text-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-4">Our Attorney</h3>
+                    <h2 class="text-4xl text-navy leading-tight font-serif">Distinguished <br>Professionals</h2>
+                </div>
+                <p class="text-slate-400 max-w-sm text-sm font-light">We assign professionals who are the most experienced in related fields to each unique case.</p>
+            </div>
+
+            <!-- Founder Sophisticated Layout -->
+            <div class="grid md:grid-cols-12 mb-20 items-center">
+                <div class="md:col-span-5 aspect-[4/5] bg-slate-100 overflow-hidden relative rounded-sm shadow">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+                         class="w-full h-full object-cover grayscale opacity-80" alt="Ramon Prama Wijaya">
+                    <div class="absolute bottom-0 left-0 bg-white p-8">
+                        <h3 class="text-xl font-serif text-navy">Ramon Prama Wijaya</h3>
+                        <p class="text-gold text-[10px] font-bold uppercase tracking-widest mt-1 italic">S.H., M.H.</p>
                     </div>
-                    <h3 class="text-2xl font-serif text-gold mb-2">Ramon Prama Wijaya</h3>
-                    <p class="text-xs uppercase tracking-widest text-slate-400 mb-6 italic">S.H., M.H. - Founder</p>
-                    <p class="text-sm leading-relaxed text-slate-300">Experienced legal practitioner since 2001 with extensive experience in Civil Court and BANI.</p>
                 </div>
-                <!-- Associate 1 -->
-                <div class="p-8 border border-slate-100 bg-slate-50 rounded-sm">
-                    <h3 class="text-xl font-serif text-navy mb-1">Dr. Eko Ariyanto</h3>
-                    <p class="text-[10px] font-bold text-gold uppercase mb-4 tracking-tighter italic">Associate</p>
-                    <p class="text-sm text-slate-500">21+ years of experience and certified non-judge mediator.</p>
+                <div class="md:col-span-7 md:pl-20 py-12">
+                    <h4 class="text-gold font-bold uppercase tracking-widest text-[10px] mb-6">Founder & Partner</h4>
+                    <p class="text-slate-600 text-lg italic font-serif leading-relaxed mb-8">
+                        "Extensive experience in Civil Court, Constitutional Court, and BANI. Holds the advocate license issued by Indonesian Advocates Association (PERADI) since 2001."
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-xs text-slate-400">
+                            <i data-lucide="check" class="w-4 h-4 text-gold"></i> Expert in Commercial Litigation
+                        </div>
+                        <div class="flex items-center gap-4 text-xs text-slate-400">
+                            <i data-lucide="check" class="w-4 h-4 text-gold"></i> Professional Mediator
+                        </div>
+                    </div>
                 </div>
-                <!-- Associate 2 -->
-                <div class="p-8 border border-slate-100 bg-slate-50 rounded-sm">
-                    <h3 class="text-xl font-serif text-navy mb-1">Niko Andro Syafril</h3>
-                    <p class="text-[10px] font-bold text-gold uppercase mb-4 tracking-tighter italic">Associate</p>
-                    <p class="text-sm text-slate-500">Legal practitioner since 2013 with deep litigation experience.</p>
+            </div>
+
+            <!-- Associates Sophisticated Grid -->
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="group">
+                    <div class="aspect-square bg-slate-100 mb-6 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 rounded-sm">
+                        <!-- Placeholder image -->
+                    </div>
+                    <h4 class="text-lg font-serif text-navy">Dr. Eko Ariyanto</h4>
+                    <p class="text-gold text-[9px] font-bold uppercase tracking-widest mb-4">Associate</p>
+                    <p class="text-slate-500 text-xs font-light leading-relaxed">21+ years of experience, certified non-judge mediator with a Doctorate from Trisakti University.</p>
+                </div>
+                <div class="group">
+                    <div class="aspect-square bg-slate-100 mb-6 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 rounded-sm">
+                        <!-- Placeholder image -->
+                    </div>
+                    <h4 class="text-lg font-serif text-navy">Niko Andro Syafril</h4>
+                    <p class="text-gold text-[9px] font-bold uppercase tracking-widest mb-4">Associate</p>
+                    <p class="text-slate-500 text-xs font-light leading-relaxed">Graduated from Islamic Bandung University. Experienced in various litigation cases since 2013.</p>
+                </div>
+                <div class="group">
+                    <div class="aspect-square bg-slate-100 mb-6 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 rounded-sm">
+                        <!-- Placeholder image -->
+                    </div>
+                    <h4 class="text-lg font-serif text-navy">Muhammad Bahrul Ulum</h4>
+                    <p class="text-gold text-[9px] font-bold uppercase tracking-widest mb-4">Associate</p>
+                    <p class="text-slate-500 text-xs font-light leading-relaxed">Specialist in civil, corporate, and commercial law with strong analytical skills in legal research.</p>
                 </div>
             </div>
         </div>
@@ -337,6 +384,16 @@
     </footer>
 
     <script>
+            // Simulasi loading halaman
+            window.addEventListener('DOMContentLoaded', function() {
+                setTimeout(function() {
+                    const loader = document.getElementById('page-loader');
+                    if(loader) {
+                        loader.style.opacity = '0';
+                        setTimeout(() => loader.style.display = 'none', 500);
+                    }
+                }, 1200);
+            });
         lucide.createIcons();
 
         const navbar = document.getElementById('navbar');
