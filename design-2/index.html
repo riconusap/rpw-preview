@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R. Prama Wijaya & Partners | Premier Legal Counsel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #0a0a0a; color: #d1d1d1; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; }
+        
+        .text-bronze { color: #bc9855; }
+        .bg-bronze { background-color: #bc9855; }
+        .border-bronze { border-color: #bc9855; }
+        
+        .bg-matte-black { background-color: #121212; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #bc9855; border-radius: 10px; }
+
+        #navbar { transition: all 0.5s ease; }
+        
+        .gentleman-card {
+            background: linear-gradient(145deg, #1a1a1a, #121212);
+            border: 1px solid rgba(188, 152, 85, 0.1);
+        }
+        
+        .gentleman-card:hover {
+            border-color: rgba(188, 152, 85, 0.5);
+        }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up { animation: fade-up 1s ease-out forwards; }
+
+        /* Floating Button - Refined Gentlemen Style */
+        .whatsapp-float {
+            max-width: 64px;
+            transition: all 0.9s cubic-bezier(0.2, 1, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        
+        .whatsapp-float:hover {
+            max-width: 350px;
+            padding-left: 28px;
+            padding-right: 12px;
+            background-color: #bc9855; /* Bronze */
+            color: #0a0a0a; /* Deep Black for Contrast */
+            border-color: transparent;
+        }
+
+        /* Teks CTA */
+        .cta-text {
+            transition: all 0.7s ease;
+            transition-delay: 0.1s;
+            transform: translateX(10px);
+        }
+        
+        .whatsapp-float:hover .cta-text {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Icon Transition */
+        .wa-icon {
+            transition: all 0.6s ease;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
+       class="whatsapp-float fixed bottom-8 right-8 z-[100] bg-matte-black text-bronze border border-bronze/40 h-[64px] rounded-full group flex items-center overflow-hidden">
+        <div class="flex items-center whitespace-nowrap">
+            <span class="cta-text opacity-0 text-[11px] font-bold uppercase tracking-[0.25em] mr-4 text-black">
+                Talk to Our Legal Team
+            </span>
+            <div class="shrink-0 flex items-center justify-center w-[60px] h-[60px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="wa-icon group-hover:scale-110">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </div>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 border-b border-white/5 py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="h-12 w-[2px] bg-bronze"></div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-serif font-bold tracking-widest text-white leading-none">RPW</span>
+                    <span class="text-[9px] tracking-[0.4em] uppercase text-bronze mt-1">Law Firm & Partners</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-12 text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400">
+                <a href="#about" class="hover:text-bronze transition-colors">Legacy</a>
+                <a href="#expertise" class="hover:text-bronze transition-colors">Expertise</a>
+                <a href="#team" class="hover:text-bronze transition-colors">Counsel</a>
+                <a href="#insights" class="hover:text-bronze transition-colors">Insights</a>
+                <a href="#contact" class="border border-bronze/40 px-6 py-2 hover:bg-bronze hover:text-black transition-all text-white font-bold">Enquire Now</a>
+            </div>
+            <button id="nav-toggle" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center bg-[#050505]">
+        <div class="absolute inset-0 z-0">
+            <!-- Overlay gradient to keep it dark and gentleman-like -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent z-10"></div>
+            <!-- Version 1 Image with grayscale filter -->
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-30 grayscale contrast-125" alt="Legal Balance">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="max-w-3xl animate-fade-up">
+                <p class="text-bronze font-bold uppercase tracking-[0.5em] text-xs mb-6 italic">Committed to Excellence</p>
+                <h1 class="text-5xl md:text-8xl text-white mb-8 leading-tight">Elite Legal <br><span class="italic font-normal text-slate-400">Resolution.</span></h1>
+                <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-light">
+                    Focused on results. Delivering practical and effective solutions to complex legal disputes with ironclad integrity.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#expertise" class="bg-bronze text-black font-bold uppercase tracking-widest text-xs px-10 py-5 hover:bg-white transition-all text-center">Practice Areas</a>
+                    <a href="#about" class="text-white border border-white/20 uppercase tracking-widest text-xs px-10 py-5 hover:bg-white/5 transition-all text-center">The Firm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy / About -->
+    <section id="about" class="py-32 bg-matte-black border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-2 gap-24 items-center">
+                <div class="relative">
+                    <div class="absolute -top-12 -left-12 text-[180px] font-serif text-white opacity-[0.03] select-none">2001</div>
+                    <h2 class="text-4xl md:text-5xl text-white mb-10 leading-tight">A Legacy of <br><span class="text-bronze italic">Experienced</span> Advocacy</h2>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        At R. Prama Wijaya & Partners, we uphold the highest standards of professional ethics. Our team of talented attorneys is assembled to provide efficiency and precision in every case.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                        <div>
+                            <span class="text-3xl text-white font-serif italic">20+</span>
+                            <p class="text-[10px] uppercase tracking-widest text-bronze font-bold mt-2">Years of Practice</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl text-white font-serif italic">100%</span>
+                            <p class="text-[10px] uppercase tracking-widest text-bronze font-bold mt-2">Confidentiality</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="gentleman-card p-10">
+                        <h4 class="text-white text-xl mb-4 font-serif italic">Our Mindset</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Understanding your objectives and finding the right approach to achieve them is our core strength.</p>
+                    </div>
+                    <div class="gentleman-card p-10 bg-bronze/5 border-bronze/20">
+                        <h4 class="text-bronze text-xl mb-4 font-serif italic">Our Promise</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">"Prioritizing client necessity and satisfaction, while upholding the codes of professionalism."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-32 bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+                <div>
+                    <h3 class="text-bronze font-bold uppercase tracking-[0.4em] text-xs mb-4">The Discipline</h3>
+                    <h2 class="text-4xl md:text-5xl text-white">Our Expertise</h2>
+                </div>
+                <div class="hidden md:block h-[1px] flex-grow mx-12 bg-white/5"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-1">
+                <div class="p-12 border border-white/5 hover:bg-white/[0.02] transition-all group">
+                    <div class="text-bronze mb-8"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl text-white font-serif mb-6 group-hover:text-bronze transition-colors">Corporate Law</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Advising on corporate structures, regulations, and compliance. Assisting in joint ventures and labor law.</p>
+                </div>
+                <div class="p-12 border border-white/5 hover:bg-white/[0.02] transition-all group">
+                    <div class="text-bronze mb-8"><i data-lucide="shield" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl text-white font-serif mb-6 group-hover:text-bronze transition-colors">Intellectual Property</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Protecting patent, trademark, and copyright registration and resolving IP disputes.</p>
+                </div>
+                <div class="p-12 border border-white/5 hover:bg-white/[0.02] transition-all group">
+                    <div class="text-bronze mb-8"><i data-lucide="landmark" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl text-white font-serif mb-6 group-hover:text-bronze transition-colors">Investment Law</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Ensuring investors obtain maximum benefits offered by Indonesia's legal frameworks.</p>
+                </div>
+                <div class="p-12 border border-white/5 hover:bg-white/[0.02] transition-all group">
+                    <div class="text-bronze mb-8"><i data-lucide="gavel" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl text-white font-serif mb-6 group-hover:text-bronze transition-colors">Litigation Case</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Representing individuals and corporations in criminal and private law areas with priority on client interest.</p>
+                </div>
+                <div class="p-12 border border-white/5 hover:bg-white/[0.02] transition-all group">
+                    <div class="text-bronze mb-8"><i data-lucide="file-text" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl text-white font-serif mb-6 group-hover:text-bronze transition-colors">Legal Audit</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Ensuring corporate documents, licenses, and assets are valid under Corporate Act regulations.</p>
+                </div>
+                <div class="p-12 border border-white/5 hover:bg-white/[0.02] transition-all group">
+                    <div class="text-bronze mb-8"><i data-lucide="refresh-cw" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl text-white font-serif mb-6 group-hover:text-bronze transition-colors">M & A</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Handling transaction structure, legal due diligence, and preparation of corporate documents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-32 bg-matte-black">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl text-white mb-6">Distinguished Counsel</h2>
+                <p class="text-bronze uppercase tracking-[0.3em] text-xs font-bold italic">Expertise. Dedication. Results.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto mb-32 group border border-white/5 bg-white/[0.01]">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-2/5 h-[500px] overflow-hidden bg-zinc-900 grayscale hover:grayscale-0 transition-all duration-1000 flex items-center justify-center">
+                        <div class="text-center p-8">
+                             <div class="w-24 h-[1px] bg-bronze mx-auto mb-6"></div>
+                             <span class="text-white/20 font-serif text-3xl uppercase tracking-widest">Ramon Prama Wijaya</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/5 p-12 lg:p-20">
+                        <span class="text-bronze text-xs font-bold uppercase tracking-widest mb-4 block italic">The Founder</span>
+                        <h3 class="text-4xl text-white font-serif mb-8">Ramon Prama Wijaya, S.H., M.H.</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed mb-10 italic">
+                            "He has extensive experience including Civil Court, Constitutional Court, and BANI. Holds advocate license issued by PERADI since the start of his career in 2001."
+                        </p>
+                        <ul class="text-xs text-slate-500 uppercase tracking-widest space-y-3">
+                            <li>• Former Junior Associate at Sijabat & Partners</li>
+                            <li>• Former Partner at Wirsamulia & Ramon</li>
+                            <li>• PERADI Licensed Advocate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+                <div class="bg-matte-black p-12 hover:bg-white/[0.02] transition-colors">
+                    <h4 class="text-white font-serif text-xl mb-1">Dr. Eko Ariyanto</h4>
+                    <span class="text-bronze text-[10px] font-bold uppercase tracking-widest mb-6 block italic">S.H., M.H., CPL., CLA., CPM.</span>
+                    <p class="text-slate-500 text-sm leading-relaxed">Bringing over 21 years of practice. Certified non-judge mediator and Doctorate in Law from Trisakti University.</p>
+                </div>
+                <div class="bg-matte-black p-12 hover:bg-white/[0.02] transition-colors">
+                    <h4 class="text-white font-serif text-xl mb-1">Niko Andro Syafril</h4>
+                    <span class="text-bronze text-[10px] font-bold uppercase tracking-widest mb-6 block italic">S.H.</span>
+                    <p class="text-slate-500 text-sm leading-relaxed">Graduated from Islamic Bandung University. Experienced since 2013 in various litigation cases.</p>
+                </div>
+                <div class="bg-matte-black p-12 hover:bg-white/[0.02] transition-colors">
+                    <h4 class="text-white font-serif text-xl mb-1">M. Bahrul Ulum</h4>
+                    <span class="text-bronze text-[10px] font-bold uppercase tracking-widest mb-6 block italic">S.H.</span>
+                    <p class="text-slate-500 text-sm leading-relaxed">Specialist in civil and state administrative law with deep understanding of regulatory compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="py-32 bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+                <div class="max-w-xl">
+                    <h3 class="text-bronze font-bold uppercase tracking-[0.4em] text-xs mb-4">Legal Insights</h3>
+                    <h2 class="text-4xl md:text-5xl text-white mb-6 leading-tight">Expert Analysis & <br><span class="italic font-normal text-slate-400 text-3xl">Strategic Perspectives</span></h2>
+                </div>
+                <a href="#" class="text-[10px] uppercase tracking-widest text-bronze font-bold border-b border-bronze pb-1 hover:text-white hover:border-white transition-all mb-4">Explore All Articles</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <article class="group">
+                    <div class="relative aspect-[16/10] bg-zinc-900 mb-8 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" alt="Legal book" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-bronze text-black text-[9px] font-bold uppercase tracking-widest px-3 py-1">Corporate</span>
+                        </div>
+                    </div>
+                    <p class="text-bronze text-[10px] font-bold uppercase tracking-widest mb-4">Dec 15, 2024</p>
+                    <h3 class="text-xl text-white font-serif mb-4 group-hover:text-bronze transition-colors leading-snug">Understanding Indonesian Corporate Act: Key Compliance Updates for 2025</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 font-light">Navigating the latest amendments in the Indonesian Corporate Act and what it means for foreign investors.</p>
+                    <a href="#" class="flex items-center gap-3 text-white text-[10px] uppercase tracking-widest font-bold group-hover:gap-5 transition-all">
+                        Read Analysis <i data-lucide="arrow-right" class="w-3 h-3 text-bronze"></i>
+                    </a>
+                </article>
+
+                <article class="group">
+                    <div class="relative aspect-[16/10] bg-zinc-900 mb-8 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" alt="Contract signing" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-bronze text-black text-[9px] font-bold uppercase tracking-widest px-3 py-1">Dispute</span>
+                        </div>
+                    </div>
+                    <p class="text-bronze text-[10px] font-bold uppercase tracking-widest mb-4">Nov 28, 2024</p>
+                    <h3 class="text-xl text-white font-serif mb-4 group-hover:text-bronze transition-colors leading-snug">The Role of Arbitration in Resolving High-Stake Business Conflicts</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 font-light">Why BANI remains the preferred venue for commercial disputes in South East Asia.</p>
+                    <a href="#" class="flex items-center gap-3 text-white text-[10px] uppercase tracking-widest font-bold group-hover:gap-5 transition-all">
+                        Read Analysis <i data-lucide="arrow-right" class="w-3 h-3 text-bronze"></i>
+                    </a>
+                </article>
+
+                <article class="group">
+                    <div class="relative aspect-[16/10] bg-zinc-900 mb-8 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2959210?auto=format&fit=crop&q=80&w=800" alt="Investment" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-bronze text-black text-[9px] font-bold uppercase tracking-widest px-3 py-1">Investment</span>
+                        </div>
+                    </div>
+                    <p class="text-bronze text-[10px] font-bold uppercase tracking-widest mb-4">Oct 10, 2024</p>
+                    <h3 class="text-xl text-white font-serif mb-4 group-hover:text-bronze transition-colors leading-snug">New Capital Market Regulations: Protecting the Interest of Minority Shareholders</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 font-light">Insights into OJK's recent circular on transparency and corporate governance standards.</p>
+                    <a href="#" class="flex items-center gap-3 text-white text-[10px] uppercase tracking-widest font-bold group-hover:gap-5 transition-all">
+                        Read Analysis <i data-lucide="arrow-right" class="w-3 h-3 text-bronze"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Clients -->
+    <section id="clients" class="py-24 bg-[#050505] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+            <h4 class="text-bronze uppercase tracking-[0.4em] text-[10px] font-bold mb-16 italic">Reputable Client Portfolio</h4>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-16 gap-x-8 opacity-40 hover:opacity-100 transition-opacity duration-700">
+                <span class="text-xs font-bold text-white tracking-widest flex items-center justify-center uppercase">PT Plaza Indonesia Realty</span>
+                <span class="text-xs font-bold text-white tracking-widest flex items-center justify-center uppercase">PT Lotte Shopping Mall</span>
+                <span class="text-xs font-bold text-white tracking-widest flex items-center justify-center uppercase">PT Japfa Comfeed</span>
+                <span class="text-xs font-bold text-white tracking-widest flex items-center justify-center uppercase">PT Trakindo Utama</span>
+                <span class="text-xs font-bold text-white tracking-widest flex items-center justify-center uppercase">PT Wiyasa Persada</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-matte-black">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row gap-24">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl md:text-5xl text-white mb-10 leading-tight">Consult with <br>Our Professionals.</h2>
+                    <p class="text-slate-400 text-lg mb-16 leading-relaxed">Speak directly with savvy, dynamic litigators who have outstanding credentials and extensive high-value case experience.</p>
+                    
+                    <div class="space-y-12">
+                        <div class="flex gap-8">
+                            <span class="text-bronze font-serif italic text-2xl">01</span>
+                            <div>
+                                <h4 class="text-white uppercase tracking-widest text-xs font-bold mb-4">SCBD Office</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Office 8, Level 18-A SCBD, Jl. Jendral Sudirman Kav. 52-53, Jakarta Selatan, 12190</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8">
+                            <span class="text-bronze font-serif italic text-2xl">02</span>
+                            <div>
+                                <h4 class="text-white uppercase tracking-widest text-xs font-bold mb-4">Communication</h4>
+                                <p class="text-slate-400 text-sm">office@rpwadvocate.com</p>
+                                <p class="text-slate-400 text-sm">(021)-29557422 / (021)-7245006</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 gentleman-card p-12">
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="border-b border-white/10 pb-2">
+                                <label class="text-[10px] uppercase text-bronze tracking-widest font-bold block mb-2">First Name</label>
+                                <input type="text" class="w-full bg-transparent border-none text-white focus:ring-0 text-sm p-0 outline-none">
+                            </div>
+                            <div class="border-b border-white/10 pb-2">
+                                <label class="text-[10px] uppercase text-bronze tracking-widest font-bold block mb-2">Last Name</label>
+                                <input type="text" class="w-full bg-transparent border-none text-white focus:ring-0 text-sm p-0 outline-none">
+                            </div>
+                        </div>
+                        <div class="border-b border-white/10 pb-2">
+                            <label class="text-[10px] uppercase text-bronze tracking-widest font-bold block mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-transparent border-none text-white focus:ring-0 text-sm p-0 outline-none">
+                        </div>
+                        <div class="border-b border-white/10 pb-2">
+                            <label class="text-[10px] uppercase text-bronze tracking-widest font-bold block mb-2">Legal Inquiry</label>
+                            <textarea rows="4" class="w-full bg-transparent border-none text-white focus:ring-0 text-sm p-0 outline-none"></textarea>
+                        </div>
+                        <button type="button" class="bg-bronze text-black font-bold uppercase tracking-widest text-xs w-full py-5 hover:bg-white transition-all">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black text-center border-t border-white/5">
+        <p class="text-[10px] text-slate-600 uppercase tracking-[0.4em]">&copy; 2024 R. Prama Wijaya & Partners. Member of PERADI.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Navbar Transition
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-black/90', 'backdrop-blur-md', 'py-4', 'shadow-2xl');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-4', 'shadow-2xl');
+                navbar.classList.add('py-6');
+            }
+        });
+    </script>
+</body>
+</html>

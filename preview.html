@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Previewer | R. Prama Wijaya & Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .iframe-container {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* Ubah ke height tetap agar iframe 100% bekerja sempurna */
+            height: calc(100vh - 80px); 
+            overflow-y: auto;
+            padding: 0; /* Default padding 0 untuk desktop */
+        }
+        iframe {
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.5s ease;
+            height: 100%;
+            border: none;
+        }
+        .active-btn {
+            background-color: #bc9855 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 overflow-hidden">
+
+    <!-- Top Toolbar -->
+    <nav class="h-20 bg-slate-800 border-b border-slate-700 flex items-center justify-between px-6 z-50 relative shadow-xl">
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-4">
+            <div class="p-2 bg-amber-500 rounded-lg text-slate-900">
+                <i data-lucide="layout"></i>
+            </div>
+            <div>
+                <h1 class="text-white font-bold text-sm leading-none">Design Previewer</h1>
+                <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-1">HTML Preview</p>
+            </div>
+        </div>
+
+        <!-- Design Switcher -->
+        <div class="flex bg-slate-900 p-1 rounded-lg border border-slate-700">
+            <button onclick="changeDesign('design-1', this)" class="design-btn active-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition-all text-slate-400 hover:text-white">
+                V1: Navy Gold
+            </button>
+            <button onclick="changeDesign('design-2', this)" class="design-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition-all text-slate-400 hover:text-white">
+                V2: Gentlemen
+            </button>
+            <button onclick="changeDesign('design-3', this)" class="design-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition-all text-slate-400 hover:text-white">
+                V3: Sophisticated
+            </button>
+        </div>
+
+        <!-- Responsive Controls -->
+        <div class="flex items-center gap-2 bg-slate-900 p-1 rounded-lg border border-slate-700">
+            <button onclick="resizeIframe('desktop', this)" class="responsive-btn active-btn p-2 rounded text-slate-400 hover:bg-slate-800 hover:text-white transition-all group" aria-label="Desktop">
+                <i data-lucide="monitor" class="w-5 h-5"></i>
+                <span class="invisible group-hover:visible absolute mt-2 left-1/2 -translate-x-1/2 bg-slate-800 text-xs text-white px-2 py-1 rounded shadow z-50 whitespace-nowrap">Desktop (Full)</span>
+            </button>
+            <button onclick="resizeIframe('mobile', this)" class="responsive-btn p-2 rounded text-slate-400 hover:bg-slate-800 hover:text-white transition-all group" aria-label="Mobile">
+                <i data-lucide="smartphone" class="w-5 h-5"></i>
+                <span class="invisible group-hover:visible absolute mt-2 left-1/2 -translate-x-1/2 bg-slate-800 text-xs text-white px-2 py-1 rounded shadow z-50 whitespace-nowrap">Mobile (375x667)</span>
+            </button>
+            <button onclick="resizeIframe('tablet', this)" class="responsive-btn p-2 rounded text-slate-400 hover:bg-slate-800 hover:text-white transition-all group" aria-label="Tablet">
+                <i data-lucide="tablet" class="w-5 h-5"></i>
+                <span class="invisible group-hover:visible absolute mt-2 left-1/2 -translate-x-1/2 bg-slate-800 text-xs text-white px-2 py-1 rounded shadow z-50 whitespace-nowrap">Tablet (768x1024)</span>
+            </button>
+        </div>
+
+        <!-- External Link -->
+        <button onclick="reloadIframe()" class="p-2 text-slate-400 hover:text-amber-500 transition-colors">
+            <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+        </button>
+    </nav>
+
+    <!-- Preview Area -->
+    <div class="iframe-container" id="container">
+        <iframe id="preview-frame" src="design-1" width="100%" class="rounded-none"></iframe>
+    </div>
+
+    <script>
+        // Init Lucide
+        lucide.createIcons();
+
+        const frame = document.getElementById('preview-frame');
+        const container = document.getElementById('container');
+
+        // Function to change URL
+        function changeDesign(url, btn) {
+            frame.src = url;
+            
+            // UI Toggle
+            document.querySelectorAll('.design-btn').forEach(b => b.classList.remove('active-btn'));
+            btn.classList.add('active-btn');
+        }
+
+        // Function to change Width
+        function resizeIframe(device, btn) {
+            // Reset styles
+            frame.classList.remove('border-[12px]', 'border-8', 'rounded-[32px]', 'rounded-xl', 'rounded-none');
+            
+            if (device === 'mobile') {
+                container.style.padding = '2rem 0';
+                frame.style.width = '375px';
+                frame.style.height = '667px';
+                frame.classList.add('border-[12px]', 'border-slate-800', 'rounded-[32px]');
+            } else if (device === 'tablet') {
+                container.style.padding = '2rem 0';
+                frame.style.width = '768px';
+                frame.style.height = '1024px';
+                frame.classList.add('border-8', 'border-slate-800', 'rounded-xl');
+            } else {
+                // Desktop Mode: Full height & Width
+                container.style.padding = '0';
+                frame.style.width = '100%';
+                frame.style.height = '100%';
+                frame.classList.add('rounded-none');
+            }
+
+            // UI Toggle
+            document.querySelectorAll('.responsive-btn').forEach(b => b.classList.remove('active-btn'));
+            btn.classList.add('active-btn');
+        }
+
+        // Reload current frame
+        function reloadIframe() {
+            const currentSrc = frame.src;
+            frame.src = '';
+            setTimeout(() => { frame.src = currentSrc; }, 50);
+        }
+    </script>
+</body>
+</html>
